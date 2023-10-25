@@ -1,6 +1,36 @@
+# Creation des dossier pour l'ajout des licences et le telechargement de l'iso
 Write-Host "Creation des dossiers"
 mkdir C:\abasources
 mkdir C:\abalic
+# Fonction de generation d'un mot de passe aleatoire pour abacus
+function Generate-RandomPassword {
+    param (
+        [int]$Length = 8  # Definition de la longueur du mot de passe
+    )
+
+    # Definition des caracteres utilises dans le mot de passe
+    $LowerCaseChars = 'abcdefghijklmnopqrstuvwxyz'
+    $UpperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    $NumericChars = '0123456789'
+    $SpecialChars = '!@#$%^&*()-_+=<>?/[]{}|'
+
+    # Combinaison de tous les types de caracteres
+    $AllChars = $LowerCaseChars + $UpperCaseChars + $NumericChars + $SpecialChars
+
+    # Generation d'une variable string pour le mot de passe aleatoire
+    $Password = ''
+
+    # Boucle pour la generation du mot de passe
+    for ($i = 0; $i -lt $Length; $i++) {
+        # Selection d'un caractere aleatoire pour le mot de passe
+        $RandomChar = $AllChars | Get-Random -Count 1
+        # Ajout du caractere au mot de passe
+        $Password += $RandomChar
+    }
+
+    return $Password
+}
+
 # Afficher les options disponibles
 Write-Host "Version ABACUS souhaitee :"
 Write-Host "1. v2021"
@@ -17,82 +47,83 @@ switch ($choice) {
 }
 # Afficher les options disponibles
 Write-Host "Version du HotFix souhaitee :"
-Write-Host "1. 09.2023"
-Write-Host "2. 08.2023"
-Write-Host "3. 07.2023"
-Write-Host "4. 06.2023"
-Write-Host "5. 05.2023"
-Write-Host "6. 04.2023"
-Write-Host "7. 03.2023"
-Write-Host "8. 02.2023"
-Write-Host "9. 01.2023"
-Write-Host "10. 12.2022"
-Write-Host "11. 11.2022"
-Write-Host "12. 10.2022"
-Write-Host "13. 09.2022"
-Write-Host "14. 08.2022"
-Write-Host "15. 07.2022"
-Write-Host "16. 06.2022"
-Write-Host "17. 05.2022"
-Write-Host "18. 04.2022"
-Write-Host "19. 03.2022"
-Write-Host "20. 02.2022"
-Write-Host "21. 01.2022"
-Write-Host "22. 12.2021"
-Write-Host "23. 11.2021"
-Write-Host "24. 10.2021"
-Write-Host "25. 09.2021"
-Write-Host "26. 08.2021"
-Write-Host "27. 07.2021"
-Write-Host "28. 06.2021"
-Write-Host "29. 05.2021"
-Write-Host "30. 04.2021"
-Write-Host "31. 03.2021"
-Write-Host "32. 02.2021"
+Write-Host "1. 10.2023"
+Write-Host "2. 09.2023"
+Write-Host "3. 08.2023"
+Write-Host "4. 07.2023"
+Write-Host "5. 06.2023"
+Write-Host "6. 05.2023"
+Write-Host "7. 04.2023"
+Write-Host "8. 03.2023"
+Write-Host "9. 02.2023"
+Write-Host "10. 01.2023"
+Write-Host "11. 12.2022"
+Write-Host "12. 11.2022"
+Write-Host "13. 10.2022"
+Write-Host "14. 09.2022"
+Write-Host "15. 08.2022"
+Write-Host "16. 07.2022"
+Write-Host "17. 06.2022"
+Write-Host "18. 05.2022"
+Write-Host "19. 04.2022"
+Write-Host "20. 03.2022"
+Write-Host "21. 02.2022"
+Write-Host "22. 01.2022"
+Write-Host "23. 12.2021"
+Write-Host "24. 11.2021"
+Write-Host "25. 10.2021"
+Write-Host "26. 09.2021"
+Write-Host "27. 08.2021"
+Write-Host "28. 07.2021"
+Write-Host "29. 06.2021"
+Write-Host "30. 05.2021"
+Write-Host "31. 04.2021"
+Write-Host "32. 03.2021"
+Write-Host "33. 02.2021"
+
 # Demander à l'utilisateur de choisir une option
 $choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1, 2, 3, etc.)"
 # Définir la variable en fonction du choix de l'utilisateur
 switch ($choice) {
-    1 { $selectedOption2 = ".09.2023" }
-    2 { $selectedOption2 = ".08.2023" }
-    3 { $selectedOption2 = ".07.2023" }
-	4 { $selectedOption2 = ".06.2023" }
-    5 { $selectedOption2 = ".05.2023" }
-    6 { $selectedOption2 = ".04.2023" }
-	7 { $selectedOption2 = ".03.2023" }
-    8 { $selectedOption2 = ".02.2023" }
-    9 { $selectedOption2 = ".01.2023" }
-	10 { $selectedOption2 = ".12.2022" }
-    11 { $selectedOption2 = ".11.2022" }
-    12 { $selectedOption2 = ".10.2022" }
-	13 { $selectedOption2 = ".09.2022" }
-    14 { $selectedOption2 = ".08.2022" }
-    15 { $selectedOption2 = ".07.2022" }
-	16 { $selectedOption2 = ".06.2022" }
-    17 { $selectedOption2 = ".05.2022" }
-    18 { $selectedOption2 = ".04.2022" }
-	19 { $selectedOption2 = ".03.2022" }
-    20 { $selectedOption2 = ".02.2022" }
-    21 { $selectedOption2 = ".01.2022" }
-	22 { $selectedOption2 = ".12.2021" }
-    23 { $selectedOption2 = ".11.2021" }
-    24 { $selectedOption2 = ".10.2021" }
-	25 { $selectedOption2 = ".09.2021" }
-    26 { $selectedOption2 = ".08.2021" }
-    27 { $selectedOption2 = ".07.2021" }
-	28 { $selectedOption2 = ".06.2021" }
-    29 { $selectedOption2 = ".05.2021" }
-    30 { $selectedOption2 = ".04.2021" }
-    31 { $selectedOption2 = ".03.2021" }
-    32 { $selectedOption2 = ".02.2021" }	
+    1 { $selectedOption2 = ".10.2023" }
+    2 { $selectedOption2 = ".09.2023" }
+    3 { $selectedOption2 = ".08.2023" }
+	4 { $selectedOption2 = ".07.2023" }
+    5 { $selectedOption2 = ".06.2023" }
+    6 { $selectedOption2 = ".05.2023" }
+	7 { $selectedOption2 = ".04.2023" }
+    8 { $selectedOption2 = ".03.2023" }
+    9 { $selectedOption2 = ".02.2023" }
+	10 { $selectedOption2 = ".01.2023" }
+	11 { $selectedOption2 = ".12.2022" }
+    12 { $selectedOption2 = ".11.2022" }
+    13 { $selectedOption2 = ".10.2022" }
+	14 { $selectedOption2 = ".09.2022" }
+    15 { $selectedOption2 = ".08.2022" }
+    16 { $selectedOption2 = ".07.2022" }
+	17 { $selectedOption2 = ".06.2022" }
+    18 { $selectedOption2 = ".05.2022" }
+    19 { $selectedOption2 = ".04.2022" }
+	20 { $selectedOption2 = ".03.2022" }
+    21 { $selectedOption2 = ".02.2022" }
+    22 { $selectedOption2 = ".01.2022" }
+	23 { $selectedOption2 = ".12.2021" }
+    24 { $selectedOption2 = ".11.2021" }
+    25 { $selectedOption2 = ".10.2021" }
+	26 { $selectedOption2 = ".09.2021" }
+    27 { $selectedOption2 = ".08.2021" }
+    28 { $selectedOption2 = ".07.2021" }
+	29 { $selectedOption2 = ".06.2021" }
+    30 { $selectedOption2 = ".05.2021" }
+    31 { $selectedOption2 = ".04.2021" }
+    32 { $selectedOption2 = ".03.2021" }
     default { $selectedOption2 = "Option invalide" }
 }
 # Afficher la variable résultante
 Write-Host "Vous avez choisi : $selectedOption2"
 $selectedOption3 = $selectedOption + $selectedOption2
 switch ($selectedOption3) {
-    "v2021.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/fc8a0bf7575ab1bba3b97dac29d2b3142bfc4eb4c7fe98a8ee1732c55a1203ad/all/v2021.207.14672-complete-15.09.2023.iso" }
-    "v2022.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/c8d2456a9c7c89386f9f467d890f1b69de4e4e75ca173a6804da8ba9fdb322a5/all/v2022.203.15319-complete-15.09.2023.iso" }
+	"v2023.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
     "v2023.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ace6896952981e35c205c5b7ec600e46f99fa382cc193f14ef9457a059ca4f91/all/v2023.203.15525-complete-15.09.2023.iso" }
     "v2023.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffcad0acad5156b73187c1a870947f31e1e702b4ee0d394869b4c8dae29feae5/all/v2023.201.15485-complete-15.08.2023.iso" }
 	"v2023.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cdfa2adb322c0da7db327429121a61ec92d4ec2cb20a62d34fd1d0696f3737d8/all/v2023.201.15460-complete-15.07.2023.iso" }
@@ -101,6 +132,8 @@ switch ($selectedOption3) {
 	"v2023.04.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a04a74bf56ca09107edba2b9bb88e07d05b58485b012d0736a2ee7260f5df93a/all/v2023.200.15324-complete-15.04.2023.iso" }
 	"v2023.03.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/31d8e4fff4ff6cd8c20efc37b0adfbaa9ecc19e8c6ea60a1b24740b6183491ea/all/v2023.200.15303-complete-28.03.2023.iso" }
 	"v2023.02.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/4ae6a544a306efbd89adc249328bc0a0bc771f83396907f753671a74ac83aeea/all/v2023.200.15257-release-15.02.2023.iso" }
+	"v2022.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/31efafcdfa9b75402f3d4b3bfcdf6582b7211e41e76b69c599471da2d130356e/all/v2022.203.15344-complete-15.10.2023.iso" }
+	"v2022.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/c8d2456a9c7c89386f9f467d890f1b69de4e4e75ca173a6804da8ba9fdb322a5/all/v2022.203.15319-complete-15.09.2023.iso" }
 	"v2022.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a693eb476775537258cc1d95134ab225fa8ef1c8a1d11f9bf9eeb0de3310c00e/all/v2022.203.15288-complete-15.08.2023.iso" }
 	"v2022.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1223bdc13c6fcf632c69e1b3b2bc1be259b9f6f84adf43ae80e3be01206d81af/all/v2022.203.15257-complete-15.07.2023.iso" }
 	"v2022.06.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/f2a13fefc300fc6bc8fa7a061f41f4bf8a02c0f0609a141742e9082d89f157e5/all/v2022.203.15219-complete-15.06.2023.iso" }
@@ -120,6 +153,8 @@ switch ($selectedOption3) {
 	"v2022.04.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/5396f9cf6af4bca58188ba96d972508fbf25e74c613e20c2f5f4aae4d206a618/all/v2022.200.14601-complete-15.04.2022.iso" }
 	"v2022.03.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cb0a6cf788ce07421bcbfd4aa81afaa2c30131b85b1dba8e6ca1eeba10892569/all/v2022.200.14562-complete-15.03.2022.iso" }
 	"v2022.02.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/fb44e5e5cb5e1c122a050427890c6b7f93282a0d2354c9b2601aa88faa69259f/all/v2022.200.14525-release-15.02.2022.iso" }
+	"v2021.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/0a2a7ddce7fd91b7ce22b215738505e57caae684629a216653637c2f5bd91a87/all/v2021.207.14689-complete-15.10.2023.iso" }
+	"v2021.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/fc8a0bf7575ab1bba3b97dac29d2b3142bfc4eb4c7fe98a8ee1732c55a1203ad/all/v2021.207.14672-complete-15.09.2023.iso" }
 	"v2021.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1a7dc06f981b28560a898953801fc3917a9b86aac7d5ab4d95fbfffa36cc4eb3/all/v2021.207.14642-complete-15.08.2023.iso" }
 	"v2021.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/45a429e6650513483cb4a6006887ef44a06a77bbacfc3183ab203b70a931fab9/all/v2021.206.14699-complete-15.07.2023.iso" }
 	"v2021.06.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ae88588b62d1e49b20bd2b3259a7db68b84cfe0e3b82f762504c4996e8f81687/all/v2021.206.14671-complete-15.06.2023.iso" }
@@ -164,8 +199,10 @@ Mount-DiskImage -ImagePath $ImagePath -StorageType ISO
 }
 $ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
 $SetupPathAbacus = $ISODrive + ":\"
-Write-Host "Definissez le mot de passe de l'administrateur ABACUS"
-$env:ABASETUP_ADMINPASSWORD=Read-Host "Veuillez entrer le mot de passe :"
+# Creation du mot de passe aleatoire pour ABACUS
+$RandomPassword = Generate-RandomPassword -Length 8
+Write-Host "!!!! Merci de noter le mot de passe d'ABACUS : $RandomPassword"
+$env:ABASETUP_ADMINPASSWORD=$RandomPassword
 $env:ABASETUP_UNATTENDED=1
 $env:ABASETUP_LANGUAGESETUP="fr"
 $env:ABASETUP_METHODVISERVER=1
