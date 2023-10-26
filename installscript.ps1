@@ -5,30 +5,36 @@ mkdir C:\abalic
 # Fonction de generation d'un mot de passe aleatoire pour abacus
 function Generate-RandomPassword {
     param (
-        [int]$Length = 8  # Definition de la longueur du mot de passe
+        [int]$Length = 8  # Définition de la longueur du mot de passe
     )
 
-    # Definition des caracteres utilises dans le mot de passe
+    # Définition des caractères utilisés dans le mot de passe
     $LowerCaseChars = 'abcdefghijklmnopqrstuvwxyz'
     $UpperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     $NumericChars = '0123456789'
     $SpecialChars = '!@#$%^&*()-_+=<>?/[]{}|'
 
-    # Combinaison de tous les types de caracteres
-    $AllChars = $LowerCaseChars + $UpperCaseChars + $NumericChars + $SpecialChars
+    # Initialisation d'un mot de passe vide
+    $Password = ""
 
-    # Generation d'une variable string pour le mot de passe aleatoire
-    $Password = ''
+    # Ajout d'au moins un caractère de chaque type pour s'assurer de leur présence
+    $Password += $LowerCaseChars | Get-Random -Count 1
+    $Password += $UpperCaseChars | Get-Random -Count 1
+    $Password += $NumericChars | Get-Random -Count 1
+    $Password += $SpecialChars | Get-Random -Count 1
 
-    # Boucle pour la generation du mot de passe
-    for ($i = 0; $i -lt $Length; $i++) {
-        # Selection d'un caractere aleatoire pour le mot de passe
-        $RandomChar = $AllChars | Get-Random -Count 1
-        # Ajout du caractere au mot de passe
+    # Génération des caractères restants
+    for ($i = 0; $i -lt ($Length - 4); $i++) {
+        # Sélection d'un caractère aléatoire parmi tous les types de caractères
+        $RandomChar = $LowerCaseChars + $UpperCaseChars + $NumericChars + $SpecialChars | Get-Random -Count 1
+        # Ajout du caractère au mot de passe
         $Password += $RandomChar
     }
 
-    return $Password
+    # Conversion de la chaîne en tableau de caractères, mélange et concaténation
+    $Password = ($Password.ToCharArray() | Get-Random -Count $Length) -join ''
+	
+	return $Password
 }
 
 # Afficher les options disponibles
@@ -200,8 +206,8 @@ Mount-DiskImage -ImagePath $ImagePath -StorageType ISO
 $ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
 $SetupPathAbacus = $ISODrive + ":\"
 # Creation du mot de passe aleatoire pour ABACUS
-$RandomPassword = Generate-RandomPassword -Length 8
-Write-Host "!!!! Merci de noter le mot de passe d'ABACUS : $RandomPassword"
+$RandomPassword = Generate-RandomPassword  -Length 8
+Write-Host "!!! Veuillez noter le mot de passe d'ABACUS: $RandomPassword" -ForegroundColor Red
 $env:ABASETUP_ADMINPASSWORD=$RandomPassword
 $env:ABASETUP_UNATTENDED=1
 $env:ABASETUP_LANGUAGESETUP="fr"
