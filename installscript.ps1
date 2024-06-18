@@ -42,93 +42,171 @@ Write-Host "Version ABACUS souhaitee :"
 Write-Host "1. v2021"
 Write-Host "2. v2022"
 Write-Host "3. v2023"
+Write-Host "4. v2024"
 # Demander à l'utilisateur de choisir une option
-$choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1, 2 ou 3)"
+$choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1, 2, 3 ou 4)"
 # Définir la variable en fonction du choix de l'utilisateur
 switch ($choice) {
     1 { $selectedOption = "v2021" }
     2 { $selectedOption = "v2022" }
     3 { $selectedOption = "v2023" }
+	4 { $selectedOption = "v2024" }
     default { $selectedOption = "Option invalide" }
 }
 # Afficher les options disponibles
 Write-Host "Version du HotFix souhaitee :"
-Write-Host "1. 10.2023"
-Write-Host "2. 09.2023"
-Write-Host "3. 08.2023"
-Write-Host "4. 07.2023"
-Write-Host "5. 06.2023"
-Write-Host "6. 05.2023"
-Write-Host "7. 04.2023"
-Write-Host "8. 03.2023"
-Write-Host "9. 02.2023"
-Write-Host "10. 01.2023"
-Write-Host "11. 12.2022"
-Write-Host "12. 11.2022"
-Write-Host "13. 10.2022"
-Write-Host "14. 09.2022"
-Write-Host "15. 08.2022"
-Write-Host "16. 07.2022"
-Write-Host "17. 06.2022"
-Write-Host "18. 05.2022"
-Write-Host "19. 04.2022"
-Write-Host "20. 03.2022"
-Write-Host "21. 02.2022"
-Write-Host "22. 01.2022"
-Write-Host "23. 12.2021"
-Write-Host "24. 11.2021"
-Write-Host "25. 10.2021"
-Write-Host "26. 09.2021"
-Write-Host "27. 08.2021"
-Write-Host "28. 07.2021"
-Write-Host "29. 06.2021"
-Write-Host "30. 05.2021"
-Write-Host "31. 04.2021"
-Write-Host "32. 03.2021"
-Write-Host "33. 02.2021"
+
+Write-Host "1. 12.2024"
+Write-Host "2. 11.2024"
+Write-Host "3. 10.2024"
+Write-Host "4. 09.2024"
+Write-Host "5. 08.2024"
+Write-Host "6. 07.2024"
+Write-Host "7. 06.2024"
+Write-Host "8. 05.2024"
+Write-Host "9. 04.2024"
+Write-Host "10. 03.2024"
+Write-Host "11. 02.2024"
+Write-Host "12. 01.2024"
+Write-Host "13. 12.2023"
+Write-Host "14. 11.2023"
+Write-Host "15. 10.2023"
+Write-Host "16. 09.2023"
+Write-Host "17. 08.2023"
+Write-Host "18. 07.2023"
+Write-Host "19. 06.2023"
+Write-Host "20. 05.2023"
+Write-Host "21. 04.2023"
+Write-Host "22. 03.2023"
+Write-Host "23. 02.2023"
+Write-Host "24. 01.2023"
+Write-Host "25. 12.2022"
+Write-Host "26. 11.2022"
+Write-Host "27. 10.2022"
+Write-Host "28. 09.2022"
+Write-Host "29. 08.2022"
+Write-Host "30. 07.2022"
+Write-Host "31. 06.2022"
+Write-Host "32. 05.2022"
+Write-Host "33. 04.2022"
+Write-Host "34. 03.2022"
+Write-Host "35. 02.2022"
+Write-Host "36. 01.2022"
+Write-Host "37. 12.2021"
+Write-Host "38. 11.2021"
+Write-Host "39. 10.2021"
+Write-Host "40. 09.2021"
+Write-Host "41. 08.2021"
+Write-Host "42. 07.2021"
+Write-Host "43. 06.2021"
+Write-Host "44. 05.2021"
+Write-Host "45. 04.2021"
+Write-Host "46. 03.2021"
+Write-Host "47. 02.2021"
+
 
 # Demander à l'utilisateur de choisir une option
 $choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1, 2, 3, etc.)"
 # Définir la variable en fonction du choix de l'utilisateur
 switch ($choice) {
-    1 { $selectedOption2 = ".10.2023" }
-    2 { $selectedOption2 = ".09.2023" }
-    3 { $selectedOption2 = ".08.2023" }
-	4 { $selectedOption2 = ".07.2023" }
-    5 { $selectedOption2 = ".06.2023" }
-    6 { $selectedOption2 = ".05.2023" }
-	7 { $selectedOption2 = ".04.2023" }
-    8 { $selectedOption2 = ".03.2023" }
-    9 { $selectedOption2 = ".02.2023" }
-	10 { $selectedOption2 = ".01.2023" }
-	11 { $selectedOption2 = ".12.2022" }
-    12 { $selectedOption2 = ".11.2022" }
-    13 { $selectedOption2 = ".10.2022" }
-	14 { $selectedOption2 = ".09.2022" }
-    15 { $selectedOption2 = ".08.2022" }
-    16 { $selectedOption2 = ".07.2022" }
-	17 { $selectedOption2 = ".06.2022" }
-    18 { $selectedOption2 = ".05.2022" }
-    19 { $selectedOption2 = ".04.2022" }
-	20 { $selectedOption2 = ".03.2022" }
-    21 { $selectedOption2 = ".02.2022" }
-    22 { $selectedOption2 = ".01.2022" }
-	23 { $selectedOption2 = ".12.2021" }
-    24 { $selectedOption2 = ".11.2021" }
-    25 { $selectedOption2 = ".10.2021" }
-	26 { $selectedOption2 = ".09.2021" }
-    27 { $selectedOption2 = ".08.2021" }
-    28 { $selectedOption2 = ".07.2021" }
-	29 { $selectedOption2 = ".06.2021" }
-    30 { $selectedOption2 = ".05.2021" }
-    31 { $selectedOption2 = ".04.2021" }
-    32 { $selectedOption2 = ".03.2021" }
-    default { $selectedOption2 = "Option invalide" }
+1 { $selectedOption2 = ".12.2024" }
+2 { $selectedOption2 = ".11.2024" }
+3 { $selectedOption2 = ".10.2024" }
+4 { $selectedOption2 = ".09.2024" }
+5 { $selectedOption2 = ".08.2024" }
+6 { $selectedOption2 = ".07.2024" }
+7 { $selectedOption2 = ".06.2024" }
+8 { $selectedOption2 = ".05.2024" }
+9 { $selectedOption2 = ".04.2024" }
+10 { $selectedOption2 = ".03.2024" }
+11 { $selectedOption2 = ".02.2024" }
+12 { $selectedOption2 = ".01.2024" }
+13 { $selectedOption2 = ".12.2023" }
+14 { $selectedOption2 = ".11.2023" }
+15 { $selectedOption2 = ".10.2023" }
+16 { $selectedOption2 = ".09.2023" }
+17 { $selectedOption2 = ".08.2023" }
+18 { $selectedOption2 = ".07.2023" }
+19 { $selectedOption2 = ".06.2023" }
+20 { $selectedOption2 = ".05.2023" }
+21 { $selectedOption2 = ".04.2023" }
+22 { $selectedOption2 = ".03.2023" }
+23 { $selectedOption2 = ".02.2023" }
+24 { $selectedOption2 = ".01.2023" }
+25 { $selectedOption2 = ".12.2022" }
+26 { $selectedOption2 = ".11.2022" }
+27 { $selectedOption2 = ".10.2022" }
+28 { $selectedOption2 = ".09.2022" }
+29 { $selectedOption2 = ".08.2022" }
+30 { $selectedOption2 = ".07.2022" }
+31 { $selectedOption2 = ".06.2022" }
+32 { $selectedOption2 = ".05.2022" }
+33 { $selectedOption2 = ".04.2022" }
+34 { $selectedOption2 = ".03.2022" }
+35 { $selectedOption2 = ".02.2022" }
+36 { $selectedOption2 = ".01.2022" }
+37 { $selectedOption2 = ".12.2021" }
+38 { $selectedOption2 = ".11.2021" }
+39 { $selectedOption2 = ".10.2021" }
+40 { $selectedOption2 = ".09.2021" }
+41 { $selectedOption2 = ".08.2021" }
+42 { $selectedOption2 = ".07.2021" }
+43 { $selectedOption2 = ".06.2021" }
+44 { $selectedOption2 = ".05.2021" }
+45 { $selectedOption2 = ".04.2021" }
+46 { $selectedOption2 = ".03.2021" }
+default { $selectedOption2 = "Option invalide" }
 }
 # Afficher la variable résultante
 Write-Host "Vous avez choisi : $selectedOption2"
 $selectedOption3 = $selectedOption + $selectedOption2
 switch ($selectedOption3) {
+	"v2024.12.2024" { $isovariable = "" }
+	"v2024.11.2024" { $isovariable = "" }
+	"v2024.10.2024" { $isovariable = "" }
+	"v2024.09.2024" { $isovariable = "" }
+	"v2024.08.2024" { $isovariable = "" }
+	"v2024.07.2024" { $isovariable = "" }
+	"v2024.06.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/06a8a92fa8d0b8f8f74648d326a5f0fd83e1d5c69b8397ad8f2b7c2b5b266f40/all/v2024.201.15951-complete-15.06.2024.iso" }
+	"v2024.05.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/89895069d2bf9b6dcd0ad8acdb5546c882c2550466c09bc4782499c8f42da343/all/v2024.201.15914-complete-15.05.2024.iso" }
+	"v2024.04.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8f9e69ad531a674c3df0be2ff144ee81d0c86a1c3f34422e555d6b534db5eda6/all/v2024.200.15872-complete-15.04.2024.iso" }
+	"v2024.03.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/5b62f3a6f56c32bee778d25159dc67c855868b265270d68a002d25f9d4d7cdf1/all/v2024.200.15845-complete-15.03.2024.iso" }
+	"v2024.02.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/72adb0c831f04f70bf228b464a683210ff3d26e9da3890ae173c748fcbe5aa88/all/v2024.200.15818-release-15.02.2024.iso" }
+	"v2023.12.2024" { $isovariable = "" }
+	"v2023.11.2024" { $isovariable = "" }
+	"v2023.10.2024" { $isovariable = "" }
+	"v2023.09.2024" { $isovariable = "" }
+    "v2023.08.2024" { $isovariable = "" }
+    "v2023.07.2024" { $isovariable = "" }
+	"v2023.06.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1819d1ba66822cfaa42521ee1a160607f4bcd607d04a43bd9e25f7007b96a5d7/all/v2023.205.15763-complete-15.06.2024.iso" }
+	"v2023.05.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffc08d217f24d218bd6fb0db0fc7334ea864bc1e6348a21b7e22fc49ff982179/all/v2023.205.15723-complete-15.05.2024.iso" }
+	"v2023.04.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/32646a68c6c38d4fb734d9edf6103e8ea17e170f5aabe975d4672481dfc8fcd6/all/v2023.205.15695-complete-15.04.2024.iso" }
+	"v2023.03.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/eb7808a73fbaddf4d8830bfa698ffce57dfb70c5fe4f31ab66732b0fe0211b6c/all/v2023.205.15665-complete-15.03.2024.iso" }
+	"v2023.02.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8d50d2b3dcc904850afd40edff643253f778e1ca90d5ed494d032312f519c526/all/v2023.203.15668-complete-15.02.2024.iso" }
+	"v2023.01.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/2e230949e0d681fe7ebdc4a2d76068fa5907c6c8d7841530b4aff4228027638c/all/v2023.203.15635-complete-15.01.2024.iso" }
+	"v2023.12.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
+	"v2023.11.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
+	"v2023.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
+    "v2023.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ace6896952981e35c205c5b7ec600e46f99fa382cc193f14ef9457a059ca4f91/all/v2023.203.15525-complete-15.09.2023.iso" }
+    "v2023.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffcad0acad5156b73187c1a870947f31e1e702b4ee0d394869b4c8dae29feae5/all/v2023.201.15485-complete-15.08.2023.iso" }
+	"v2023.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cdfa2adb322c0da7db327429121a61ec92d4ec2cb20a62d34fd1d0696f3737d8/all/v2023.201.15460-complete-15.07.2023.iso" }
+	"v2023.06.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a1ed30250beb15b27a44d6166d9921299a91a10c966b4f44a145db8312b68671/all/v2023.201.15429-complete-15.06.2023.iso" }
+	"v2023.05.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/be85819280e7114a93174925fa0e7563c7990bdb401c26c270b721c9e0fd4e6d/all/v2023.201.15399-complete-15.05.2023.iso" }
+	"v2023.04.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a04a74bf56ca09107edba2b9bb88e07d05b58485b012d0736a2ee7260f5df93a/all/v2023.200.15324-complete-15.04.2023.iso" }
+	"v2023.03.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/31d8e4fff4ff6cd8c20efc37b0adfbaa9ecc19e8c6ea60a1b24740b6183491ea/all/v2023.200.15303-complete-28.03.2023.iso" }
+	"v2023.02.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/4ae6a544a306efbd89adc249328bc0a0bc771f83396907f753671a74ac83aeea/all/v2023.200.15257-release-15.02.2023.iso" }
+	"v2022.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/31efafcdfa9b75402f3d4b3bfcdf6582b7211e41e76b69c599471da2d130356e/all/v2022.203.15344-complete-15.10.2023.iso" }
+	"v2022.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/c8d2456a9c7c89386f9f467d890f1b69de4e4e75ca173a6804da8ba9fdb322a5/all/v2022.203.15319-complete-15.09.2023.iso" }
+	"v2022.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a693eb476775537258cc1d95134ab225fa8ef1c8a1d11f9bf9eeb0de3310c00e/all/v2022.203.15288-complete-15.08.2023.iso" }
+	"v2022.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1223bdc13c6fcf632c69e1b3b2bc1be259b9f6f84adf43ae80e3be01206d81af/all/v2022.203.15257-complete-15.07.2023.iso" }
+	"v2022.06.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/f2a13fefc300fc6bc8fa7a061f41f4bf8a02c0f0609a141742e9082d89f157e5/all/v2022.203.15219-complete-15.06.2023.iso" }
+	"v2022.05.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/09e1b7c074f35e885e1a2bad0a3813b0abc9b694295c709c35d681712c2cba11/all/v2022.203.15189-complete-15.05.2023.iso" }
+	"v2022.04.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/30834087f23fd2907cd856fe0e47dbe313724a578993c00430e86c222c9a6a16/all/v2022.203.15157-complete-15.04.2023.iso" }
+	"v2022.03.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/20db57a5dc28698f1da12cb83c6742df8a10c04ebf58a3c2ad70c8fe5beeb1ed/all/v2022.203.15136-complete-28.03.2023.iso" }
+	"v2022.02.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/edd7cf39438dec6dc4f3cfa3162f5788d56fad54fc8dc41175925199400e3d60/all/v2022.202.15098-complete-15.02.2023.iso" }
+	"v2022.01.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/5fa23f3c3c636da51a901f9bce2ac045aac15b0e5eaaf9142e529f271c4360f2/all/v2022.202.15067-complete-15.01.2023.iso" }
+	"v2023.12.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
+	"v2023.11.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
 	"v2023.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
     "v2023.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ace6896952981e35c205c5b7ec600e46f99fa382cc193f14ef9457a059ca4f91/all/v2023.203.15525-complete-15.09.2023.iso" }
     "v2023.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffcad0acad5156b73187c1a870947f31e1e702b4ee0d394869b4c8dae29feae5/all/v2023.201.15485-complete-15.08.2023.iso" }
