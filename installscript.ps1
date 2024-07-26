@@ -166,7 +166,7 @@ switch ($selectedOption3) {
 	"v2024.10.2024" { $isovariable = "" }
 	"v2024.09.2024" { $isovariable = "" }
 	"v2024.08.2024" { $isovariable = "" }
-	"v2024.07.2024" { $isovariable = "" }
+	"v2024.07.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/3ce29569bcb7e15e729f6872266f777f5766f0f291380baddc156d59fcb96853/all/v2024.201.16000-complete-15.07.2024.iso" }
 	"v2024.06.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/06a8a92fa8d0b8f8f74648d326a5f0fd83e1d5c69b8397ad8f2b7c2b5b266f40/all/v2024.201.15951-complete-15.06.2024.iso" }
 	"v2024.05.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/89895069d2bf9b6dcd0ad8acdb5546c882c2550466c09bc4782499c8f42da343/all/v2024.201.15914-complete-15.05.2024.iso" }
 	"v2024.04.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8f9e69ad531a674c3df0be2ff144ee81d0c86a1c3f34422e555d6b534db5eda6/all/v2024.200.15872-complete-15.04.2024.iso" }
@@ -176,8 +176,8 @@ switch ($selectedOption3) {
 	"v2023.11.2024" { $isovariable = "" }
 	"v2023.10.2024" { $isovariable = "" }
 	"v2023.09.2024" { $isovariable = "" }
-    "v2023.08.2024" { $isovariable = "" }
-    "v2023.07.2024" { $isovariable = "" }
+    	"v2023.08.2024" { $isovariable = "" }
+   	"v2023.07.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/03dd25d109d5358587f2314c6679916b9771bc3efc4b0c3494b9838115279316/all/v2023.205.15796-complete-15.07.2024.iso" }
 	"v2023.06.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1819d1ba66822cfaa42521ee1a160607f4bcd607d04a43bd9e25f7007b96a5d7/all/v2023.205.15763-complete-15.06.2024.iso" }
 	"v2023.05.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffc08d217f24d218bd6fb0db0fc7334ea864bc1e6348a21b7e22fc49ff982179/all/v2023.205.15723-complete-15.05.2024.iso" }
 	"v2023.04.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/32646a68c6c38d4fb734d9edf6103e8ea17e170f5aabe975d4672481dfc8fcd6/all/v2023.205.15695-complete-15.04.2024.iso" }
@@ -187,8 +187,8 @@ switch ($selectedOption3) {
 	"v2023.12.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/661ddf15b40093792fdf4b24089ff7de44f854fca59bb850e7d93d55c9d10b89/all/v2023.203.15609-complete-15.12.2023.iso" }
 	"v2023.11.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/9b1a1060cc4f7b293357e6b19c3b3e87a9515abdc30ef26f1bde4cd9b9ac31e2/all/v2023.203.15580-complete-15.11.2023.iso" }
 	"v2023.10.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8a1a94f76465278135af219f1d361153349c0741ff662b424f31bed7c03f6128/all/v2023.203.15552-complete-15.10.2023.iso" }
-    "v2023.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ace6896952981e35c205c5b7ec600e46f99fa382cc193f14ef9457a059ca4f91/all/v2023.203.15525-complete-15.09.2023.iso" }
-    "v2023.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffcad0acad5156b73187c1a870947f31e1e702b4ee0d394869b4c8dae29feae5/all/v2023.201.15485-complete-15.08.2023.iso" }
+    	"v2023.09.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ace6896952981e35c205c5b7ec600e46f99fa382cc193f14ef9457a059ca4f91/all/v2023.203.15525-complete-15.09.2023.iso" }
+   	"v2023.08.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/ffcad0acad5156b73187c1a870947f31e1e702b4ee0d394869b4c8dae29feae5/all/v2023.201.15485-complete-15.08.2023.iso" }
 	"v2023.07.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cdfa2adb322c0da7db327429121a61ec92d4ec2cb20a62d34fd1d0696f3737d8/all/v2023.201.15460-complete-15.07.2023.iso" }
 	"v2023.06.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a1ed30250beb15b27a44d6166d9921299a91a10c966b4f44a145db8312b68671/all/v2023.201.15429-complete-15.06.2023.iso" }
 	"v2023.05.2023" { $isovariable = "https://storage.googleapis.com/images.abasky.net/be85819280e7114a93174925fa0e7563c7990bdb401c26c270b721c9e0fd4e6d/all/v2023.201.15399-complete-15.05.2023.iso" }
@@ -200,7 +200,7 @@ switch ($selectedOption3) {
 	"v2022.10.2024" { $isovariable = "" }
 	"v2022.09.2024" { $isovariable = "" }
 	"v2022.08.2024" { $isovariable = "" }
-	"v2022.07.2024" { $isovariable = "" }
+	"v2022.07.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/6e83812bd628d82db94650e7a5955e2f93c58b881d6e4fa48faf5ef54391f37a/all/v2022.204.15590-complete-15.07.2024.iso" }
 	"v2022.06.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/23a3af9e3c2862c802dd1251eb3390e0be1b6336400462b834839c5db745bd42/all/v2022.204.15557-complete-15.06.2024.iso" }
 	"v2022.05.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cbd68d69361fdcf4a1a720ee7903885dea1564fa6a09adb616b3a75381456425/all/v2022.204.15513-complete-15.05.2024.iso" }
 	"v2022.04.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8776bfdea48cd5b81444039661714b67ea3b8c14f591e6108f0dbf103ec6d7b3/all/v2022.204.15486-complete-15.04.2024.iso" }
