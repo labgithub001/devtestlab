@@ -39,20 +39,22 @@ function Generate-RandomPassword {
 
 # Afficher les options disponibles
 Write-Host "Version ABACUS souhaitee :"
-Write-Host "1. v2021"
-Write-Host "2. v2022"
-Write-Host "3. v2023"
-Write-Host "4. v2024"
-Write-Host "5. v2025"
+Write-Host "1. v2020"
+Write-Host "2. v2021"
+Write-Host "3. v2022"
+Write-Host "4. v2023"
+Write-Host "5. v2024"
+Write-Host "6. v2025"
 # Demander à l'utilisateur de choisir une option
-$choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1, 2, 3, 4 ou 5)"
+$choice = Read-Host "Veuillez entrer le numéro de l'option choisie (1-6)"
 # Définir la variable en fonction du choix de l'utilisateur
 switch ($choice) {
-    1 { $selectedOption = "v2021" }
-    2 { $selectedOption = "v2022" }
-    3 { $selectedOption = "v2023" }
-    4 { $selectedOption = "v2024" }
-    5 { $selectedOption = "v2025" }
+    1 { $selectedOption = "v2020" }
+    2 { $selectedOption = "v2021" }
+    3 { $selectedOption = "v2022" }
+    4 { $selectedOption = "v2023" }
+    5 { $selectedOption = "v2024" }
+    6 { $selectedOption = "v2025" }
     default { $selectedOption = "Option invalide" }
 }
 # Afficher les options disponibles
@@ -106,6 +108,18 @@ Write-Host "45. 05.2021"
 Write-Host "46. 04.2021"
 Write-Host "47. 03.2021"
 Write-Host "48. 02.2021"
+Write-Host "49. 01.2022"
+Write-Host "50. 12.2020"
+Write-Host "51. 11.2020"
+Write-Host "52. 10.2020"
+Write-Host "53. 09.2020"
+Write-Host "54. 08.2020"
+Write-Host "55. 07.2020"
+Write-Host "56. 06.2020"
+Write-Host "57. 05.2020"
+Write-Host "58. 04.2020"
+Write-Host "59. 03.2020"
+Write-Host "60. 02.2020"
 
 
 # Demander à l'utilisateur de choisir une option
@@ -160,6 +174,18 @@ switch ($choice) {
 46 { $selectedOption2 = ".04.2021" }
 47 { $selectedOption2 = ".03.2021" }
 48 { $selectedOption2 = ".02.2021" }
+49 { $selectedOption2 = ".01.2021" }
+50 { $selectedOption2 = ".12.2020" }
+51 { $selectedOption2 = ".11.2020" }
+52 { $selectedOption2 = ".10.2020" }
+53 { $selectedOption2 = ".09.2020" }
+54 { $selectedOption2 = ".08.2020" }
+55 { $selectedOption2 = ".07.2020" }
+56 { $selectedOption2 = ".06.2020" }
+57 { $selectedOption2 = ".05.2020" }
+58 { $selectedOption2 = ".04.2020" }
+59 { $selectedOption2 = ".03.2020" }
+60 { $selectedOption2 = ".02.2020" }
 default { $selectedOption2 = "Option invalide" }
 }
 # Afficher la variable résultante
@@ -280,6 +306,39 @@ switch ($selectedOption3) {
 	"v2021.04.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a593ea471f5a92473a515cff84b90b0a879e1625b2f687ad6761320d131d34dd/all/v2021.200.13701-complete-15.04.2021.iso" }
 	"v2021.03.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/c6462f4c72a97272cd09bb6af444a3cdf5b3ed191889cc38b9a58fc87dce7711/all/v2021.200.13668-complete-15.03.2021.iso" }
 	"v2021.02.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/1411b4241da32e44a68614c8583f5e29bb1ef635c78fa7d8f525dabfd002e033/all/v2021.200.13641-release-15.02.2021.iso" }
+ 	"v2020.10.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/26af1e70eb7aee62fb79819d85af5101bbe1855a3f024e3bf9e7587d3f6b0f57/all/v2020.206.13869-complete-15.10.2022.iso" }
+  	"v2020.09.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8db3616bba0e03d25f8a18d30c4fa4d708e7fe4951d256b2d2a0592d2a70767e/all/v2020.206.13842-complete-15.09.2022.iso" }
+   	"v2020.08.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a435ecd930e00e7d0a45add212b4f5101757555a60928bdf1f3f11ca1305f6f9/all/v2020.206.13813-complete-15.08.2022.iso" }
+    	"v2020.07.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d7fad8318c032e9dad7a4a4e178141ecd7e7691a0113a07075cf7309a348e480/all/v2020.205.13879-complete-15.07.2022.iso" }
+       	"v2020.06.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/9f5591d6ad57dbaba866dda77788e4a00e6e73cf6b0120cb9b74fb95334a637b/all/v2020.205.13849-complete-15.06.2022.iso" }
+   	"v2020.05.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d41c034a38e8704199cf1aaf9cb7353285ffaea2e660ec8ca75250be861795c3/all/v2020.205.13823-complete-15.05.2022.iso" }
+    	"v2020.04.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/bb8309825a56e3c711fe33c7352555493e38b56f19982bded35099004dd13941/all/v2020.205.13798-complete-15.04.2022.iso" }
+       	"v2020.03.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/b9ce29c0eb5eaf11bce43f05d0d11d5056bcc285843170fb6587cc3ae4fbe734/all/v2020.205.13762-complete-15.03.2022.iso" }
+   	"v2020.02.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/234d65469b07109bde2bec91431f0264d7cd8f62aec8531d370a2b552481f085/all/v2020.205.13731-complete-15.02.2022.iso" }
+    	"v2020.01.2022" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a696c3e70791a2081ee66e74f6cfc36f130578c76b657f27051e6746c06e42a9/all/v2020.205.13701-complete-15.01.2022.iso" }
+       	"v2020.12.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/6072dfc88e08532b74555eb3c57c485d035e12222c902a60136df84d679a707f/all/v2020.205.13672-complete-15.12.2021.iso" }
+   	"v2020.11.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/6db34bbe654d0eabef7b51050bcc1ceeb622efc1da215803a2dd9ceb1d9a1805/all/v2020.205.13640-complete-15.11.2021.iso" }
+    	"v2020.10.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/82020061e1c7d3fa020335e1f1d6ffcb79f9c27eb8dcaa4414e59ab1b8f27bb7/all/v2020.204.13572-complete-15.10.2021.iso" }
+       	"v2020.09.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/f40c67d3e0e9a79bbff86bf3bf45f17f1e11e509de781d7a392d21442de22b31/all/v2020.204.13540-complete-15.09.2021.iso" }
+   	"v2020.08.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8f0e98b2372976af55444227d62259f886228d6f71183ef681da964569d76b89/all/v2020.204.13512-complete-15.08.2021.iso" }
+    	"v2020.07.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/e05fc069990dfab90f83f8e83f0665dd86bc159315c031f054c1c0c54d1fb1ba/all/v2020.204.13477-complete-15.07.2021.iso" }
+       	"v2020.06.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/53d7508a70d927e34d3333affcd3e376192e9710b8a1183f64389b868bf8663c/all/v2020.204.13449-complete-15.06.2021.iso" }
+   	"v2020.05.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/69d5b88d2f6318ec4065d6a5de0b88ae6fe13c9f8633fe78c83e93d1fc9885db/all/v2020.204.13423-complete-15.05.2021.iso" }
+    	"v2020.04.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/706b42515523c46858f5f226bf58efab9dc681d3dcc69304367a1d9948e3566b/all/v2020.204.13394-complete-15.04.2021.iso" }
+       	"v2020.03.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/546dc26e9be5b50f60ca346d6eb675788ce05a95de3f78249c20178c10b86f0a/all/v2020.204.13359-complete-15.03.2021.iso" }
+   	"v2020.02.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/5548affcf6ee52e50bf27bac51b284c232a55d8dba11e7aada11509050515ca0/all/v2020.203.13289-complete-24.02.2021.iso" }
+    	"v2020.01.2021" { $isovariable = "https://storage.googleapis.com/images.abasky.net/00026905fc971a89bf74d04e9d8c5551c9c21450f638f79e8fbe17c640c38b43/all/v2020.203.13255-complete-15.01.2021.iso" }
+        "v2020.12.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/3d6554c7537b5dae05fea8bdcbc24f84864d3280366db8ca177ecd68a8c66fda/all/v2020.203.13223-complete-15.12.2020.iso" }
+   	"v2020.11.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/a4e1ed1e1674c051a2944b1fb61fec56c572da9c577edbd0f9de84162729ddba/all/v2020.203.13191-complete-15.11.2020.iso" }
+    	"v2020.10.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8961cc277895355d7387ad56fa3d2bb61067db726a66b6482a3703ce78c0953e/all/v2020.203.13147-complete-15.10.2020.iso" }
+       	"v2020.09.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/03e4783f116c92d6beddd863032142d69e7755af0c63dbaeefdc0866fee901d1/all/v2020.203.13105-complete-15.09.2020.iso" }
+   	"v2020.08.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/c5af1a9a2eeb834c1c4cdcf56894c310b582cd4234bc36b9d156e07f85acae5f/all/v2020.201.12983-complete-15.08.2020.iso" }
+    	"v2020.07.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/0b93fba0d266287f3e0c2465c0fe5f0948d9978d5c33ffa0f43c9ad1bb2b0389/all/v2020.201.12944-complete-15.07.2020.iso" }
+       	"v2020.06.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d4abac5da8fea86e25fb8118ce751c6c459153fc6320c296ebd78a48b3c92a87/all/v2020.201.12926-complete-25.06.2020.iso" }
+   	"v2020.05.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/cc14e8cd9f5557217041597e5ec0fcec8ecfa77da8eac25cf1458de963b0041d/all/v2020.201.12888-complete-15.05.2020.iso" }
+    	"v2020.04.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d8e6d2e5d7923e4e139260d791f1e8d8e9824b73e134cdbace358db875c9da51/all/v2020.200.12761-complete-15.04.2020.iso" }
+       	"v2020.03.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/8e18c314c1244a26c6788ba471c8b663a403e55d0234e53da9dbda2ca797d29d/all/v2020.200.12734-complete-15.03.2020.iso" }
+   	"v2020.02.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d281a2993acb83306536d14ae472f5fc149f36aedb568ce30149a875173e213f/all/v2020.200.12701-release-15.02.2020.iso" }
 	default { $isovariable ="Option invalide" }
 }
 Write-Host "Telechargement du fichier iso"
