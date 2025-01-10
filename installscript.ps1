@@ -1,7 +1,20 @@
-# Creation des dossier pour l'ajout des licences et le telechargement de l'iso
+# Verification et creation des dossier si besoin pour l'ajout des licences et le telechargement de l'iso
 Write-Host "Creation des dossiers"
-mkdir C:\abasources
-mkdir C:\abalic
+if (-not (Test-Path $abasourcesfolder)) {
+    # Si le dossier n'existe pas, le créer
+    New-Item -Path $abasourcesfolder -ItemType Directory
+    Write-Host "Le dossier C:\abasources a ete cree."
+} else {
+    Write-Host "Le dossier C:\abasources existe deja."
+}
+$abalicfolder = "C:\abalic"
+if (-not (Test-Path $abalicfolder)) {
+    # Si le dossier n'existe pas, le créer
+    New-Item -Path $abalicfolder -ItemType Directory
+    Write-Host "Le dossier C:\abalic a ete cree."
+} else {
+    Write-Host "Le dossier C:\abalic existe deja."
+}
 # Fonction de generation d'un mot de passe aleatoire pour abacus
 function Generate-RandomPassword {
     param (
@@ -36,7 +49,8 @@ function Generate-RandomPassword {
 	
 	return $Password
 }
-
+# Boucle pour le choix de version
+do {
 # Afficher les options disponibles
 Write-Host "Version ABACUS souhaitee :"
 Write-Host "1. v2020"
@@ -57,6 +71,9 @@ switch ($choice) {
     6 { $selectedOption = "v2025" }
     default { $selectedOption = "Option invalide" }
 }
+} until ($choice -gt 0)
+# Boucle pour le choix de HF
+do {
 # Afficher les options disponibles
 Write-Host "Version du HotFix souhaitee :"
 
@@ -188,6 +205,7 @@ switch ($choice) {
 60 { $selectedOption2 = ".02.2020" }
 default { $selectedOption2 = "Option invalide" }
 }
+} until ($choice -gt 0)
 # Afficher la variable résultante
 $selectedOption3 = $selectedOption + $selectedOption2
 Write-Host "Vous avez choisi : $selectedOption3"
@@ -341,28 +359,43 @@ switch ($selectedOption3) {
    	"v2020.02.2020" { $isovariable = "https://storage.googleapis.com/images.abasky.net/d281a2993acb83306536d14ae472f5fc149f36aedb568ce30149a875173e213f/all/v2020.200.12701-release-15.02.2020.iso" }
 	default { $isovariable ="Option invalide" }
 }
-Write-Host "Telechargement du fichier iso"
-$WebClient = New-Object System.Net.WebClient
-$WebClient.DownloadFile($isovariable,"C:\abasources\abacus.iso")
-Write-Host "Montage du fichier iso"
-$ImagePath= "C:\abasources\abacus.iso"
-$ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
-IF (!$ISODrive) {
-Mount-DiskImage -ImagePath $ImagePath -StorageType ISO
+# Verification de l'existence de l'URL pour l'iso
+if ($null -ne $isovariable -and $isovariable -eq "Option invalide") {
+	Write-Host "La version choisie n'est pas disponible, merci de relancer le script"
+	pause
+	exit
 }
-$ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
-$SetupPathAbacus = $ISODrive + ":\"
-# Creation du mot de passe aleatoire pour ABACUS
-$RandomPassword = Generate-RandomPassword  -Length 8
-Write-Host "!!! Veuillez noter le mot de passe d'ABACUS: $RandomPassword" -ForegroundColor Red
-$env:ABASETUP_ADMINPASSWORD=$RandomPassword
-$env:ABASETUP_UNATTENDED=1
-$env:ABASETUP_LANGUAGESETUP="fr"
-$env:ABASETUP_METHODVISERVER=1
-$env:ABASETUP_TARGETDIR="C:\"
-$env:ABASETUP_REGISTRATION_LOCATION="C:\abalic\abareg.xml"
-Write-Host "Merci de copier le fichier abareg.xml dans le dossier C:\abalic\ avant de continuer"
-pause
-Write-Host "Lancement de l'installation automatisée d'abacus"
-cd $SetupPathAbacus
-.\abasetup.exe
+else {
+	$ImagePath= "C:\abasources\abacus.iso"
+	# Verification de l'existence d'un fichier iso dans le repertoire
+ 	if (Test-Path $ImagePath) { 
+	  	# Demontage et suppression du fichier
+		Dismount-DiskImage -ImagePath $ImagePath
+		Remove-Item $ImagePath -Force
+		Write-Host "L'ancien fichier abacus.iso a ete supprime"
+	}
+	Write-Host "Telechargement du fichier iso"
+	$WebClient = New-Object System.Net.WebClient
+	$WebClient.DownloadFile($isovariable,"C:\abasources\abacus.iso")
+	Write-Host "Montage du fichier iso"
+	$ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
+	IF (!$ISODrive) {
+		Mount-DiskImage -ImagePath $ImagePath -StorageType ISO
+	}
+	$ISODrive = (Get-DiskImage -ImagePath $ImagePath | Get-Volume).DriveLetter
+	$SetupPathAbacus = $ISODrive + ":\"
+	# Creation du mot de passe aleatoire pour ABACUS
+	$RandomPassword = Generate-RandomPassword  -Length 8
+	Write-Host "!!! Veuillez noter le mot de passe d'ABACUS: $RandomPassword" -ForegroundColor Red
+	$env:ABASETUP_ADMINPASSWORD=$RandomPassword
+	$env:ABASETUP_UNATTENDED=1
+	$env:ABASETUP_LANGUAGESETUP="fr"
+	$env:ABASETUP_METHODVISERVER=1
+	$env:ABASETUP_TARGETDIR="C:\"
+	$env:ABASETUP_REGISTRATION_LOCATION="C:\abalic\abareg.xml"
+	Write-Host "Merci de copier le fichier abareg.xml dans le dossier C:\abalic\ avant de continuer"
+	pause
+	Write-Host "Lancement de l'installation automatisée d'abacus"
+	cd $SetupPathAbacus
+	.\abasetup.exe
+}
