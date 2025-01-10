@@ -189,8 +189,8 @@ switch ($choice) {
 default { $selectedOption2 = "Option invalide" }
 }
 # Afficher la variable résultante
-Write-Host "Vous avez choisi : $selectedOption2"
 $selectedOption3 = $selectedOption + $selectedOption2
+Write-Host "Vous avez choisi : $selectedOption3"
 switch ($selectedOption3) {
 	"v2025.01.2025" { $isovariable = "" }
  	"v2025.12.2024" { $isovariable = "https://storage.googleapis.com/images.abasky.net/412d496dfa1afcc8ba26e3996ac19cfe448369cf9c3fbf5d48ef219514e8cc13/all/v2025.100.16463-complete-15.12.2024.iso" }
