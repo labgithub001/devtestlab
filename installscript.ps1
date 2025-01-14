@@ -1,4 +1,5 @@
 # Verification et creation des dossier si besoin pour l'ajout des licences et le telechargement de l'iso
+$abasourcesfolder = "C:\abasources"
 Write-Host "Creation des dossiers"
 if (-not (Test-Path $abasourcesfolder)) {
     # Si le dossier n'existe pas, le créer
