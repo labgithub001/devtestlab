@@ -1,9 +1,18 @@
 <#
 .SYNOPSIS
-    Installation automatisée d'Abacus avec sélection dynamique Version/Hotfix.
+    Installation automatisée d'Abacus - Version Finale Optimisée
 #>
 
-# --- CONFIGURATION DES VERSIONS (À mettre à jour ici) ---
+# 1. Privilèges Administrateur
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Warning "Veuillez lancer PowerShell en tant qu'administrateur."
+    pause ; exit
+}
+
+# --- CONFIGURATION DES VERSIONS ---
+# Vous pouvez ajouter autant de versions que vous voulez ici. 
+# Veillez juste à ce que chaque "MM.AAAA" soit unique au sein d'une même année majeure.
+
 $AbacusRepo = @{
     "2026" = @{
         "02.2026" = "https://storage.googleapis.com/images.abasky.net/1866a5ca2e044f29d3ffb38169ebe61783dda65e6c853ab0ba29588adc0146ee/all/v2026.200.17046-release-15.02.2026.iso"
@@ -194,122 +203,83 @@ $AbacusRepo = @{
     	"03.2020" = "https://storage.googleapis.com/images.abasky.net/8e18c314c1244a26c6788ba471c8b663a403e55d0234e53da9dbda2ca797d29d/all/v2020.200.12734-complete-15.03.2020.iso"
    	    "02.2020" = "https://storage.googleapis.com/images.abasky.net/d281a2993acb83306536d14ae472f5fc149f36aedb568ce30149a875173e213f/all/v2020.200.12701-release-15.02.2020.iso"
     }
-    # Tu peux ajouter 2023, 2022, etc. de la même manière
 }
 
-# 1. Vérification des privilèges Administrateur
-if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Warning "Veuillez lancer PowerShell en tant qu'administrateur."
-    pause ; exit
-}
-
-# 2. Création des répertoires de travail
-$basePath = "C:\abasources"
-$licPath  = "C:\abalic"
-$isoPath  = Join-Path $basePath "abacus.iso"
-
-foreach ($folder in ($basePath, $licPath)) {
-    if (-not (Test-Path $folder)) { 
-        New-Item $folder -ItemType Directory | Out-Null
-        Write-Host "Dossier $folder cree." -ForegroundColor Gray
-    }
-}
-
-# 3. Menu de sélection de la Version Majeure (Année)
-Write-Host "`n--- SELECTION DE LA VERSION MAJEURE ---" -ForegroundColor Cyan
+# --- LOGIQUE DE SÉLECTION ---
 $majors = $AbacusRepo.Keys | Sort-Object -Descending
-for ($i = 0; $i -lt $majors.Count; $i++) {
-    Write-Host " [$($i + 1)] Abacus v$($majors[$i])"
-}
-
-$vChoice = Read-Host "`nChoisissez une version (1-$($majors.Count))"
+Write-Host "`n--- SELECTION DE LA VERSION MAJEURE ---" -ForegroundColor Cyan
+for ($i = 0; $i -lt $majors.Count; $i++) { Write-Host " [$($i + 1)] Abacus v$($majors[$i])" }
+$vChoice = Read-Host "`nChoisissez une version"
 $selectedMajor = $majors[$vChoice - 1]
 
-if (-not $selectedMajor) { Write-Error "Selection invalide."; pause; exit }
+# TRI CHRONOLOGIQUE DES VERSIONS MINEURES (Même s'il y en a 30+)
+Write-Host "`n--- HOTFIX DISPONIBLES (Le plus recent en haut) ---" -ForegroundColor Cyan
+$sortedHotfixes = $AbacusRepo[$selectedMajor].Keys | Sort-Object { 
+    [datetime]::ParseExact($_, "MM.yyyy", $null) 
+} -Descending
 
-# 4. Menu de sélection du Hotfix (Mois)
-Write-Host "`n--- HOTFIX DISPONIBLES POUR v$selectedMajor ---" -ForegroundColor Cyan
-$hotfixes = $AbacusRepo[$selectedMajor].Keys | Sort-Object -Descending
-for ($j = 0; $j -lt $hotfixes.Count; $j++) {
-    Write-Host " [$($j + 1)] Build $($hotfixes[$j])"
+for ($j = 0; $j -lt $sortedHotfixes.Count; $j++) { 
+    Write-Host " [$($j + 1)] Build $($sortedHotfixes[$j])" 
 }
-
-$hChoice = Read-Host "`nChoisissez le hotfix (1-$($hotfixes.Count))"
-$selectedHF = $hotfixes[$hChoice - 1]
+$hChoice = Read-Host "`nChoisissez le hotfix"
+$selectedHF = $sortedHotfixes[$hChoice - 1]
 $downloadUrl = $AbacusRepo[$selectedMajor][$selectedHF]
 
-if (-not $downloadUrl) { Write-Error "Sélection invalide."; pause; exit }
+# --- TÉLÉCHARGEMENT ---
+$basePath = "C:\abasources"
+$isoPath  = Join-Path $basePath "abacus.iso"
+if (-not (Test-Path $basePath)) { New-Item $basePath -ItemType Directory | Out-Null }
 
-# 5. Nettoyage et Téléchargement
 if (Test-Path $isoPath) {
-    Write-Host "`nNettoyage de l'ancien ISO..." -ForegroundColor Gray
     Dismount-DiskImage -ImagePath $isoPath -ErrorAction SilentlyContinue
     Remove-Item $isoPath -Force
 }
 
 try {
-    Write-Host "`nTelechargement : Abacus v$selectedMajor ($selectedHF)" -ForegroundColor Green
-    $ProgressPreference = 'SilentlyContinue' # Accélère le transfert
+    Write-Host "`nTelechargement : Abacus v$selectedMajor ($selectedHF)..." -ForegroundColor Green
+    $ProgressPreference = 'SilentlyContinue'
     Start-BitsTransfer -Source $downloadUrl -Destination $isoPath -DisplayName "Abacus ISO"
     $ProgressPreference = 'Continue'
 } catch {
-    Write-Error "Erreur de telechargement : $_"
-    pause ; exit
+    Write-Error "Echec du telechargement : $_"; pause; exit
 }
 
-# 6. Montage et Préparation Installation
+# --- MONTAGE ET PARAMÉTRAGE ---
 try {
-    # Vérification que le fichier existe bien sur le disque
-    if (-not (Test-Path $isoPath)) {
-        throw "Le fichier ISO n'a pas ete trouve dans $isoPath. Le telechargement a peut-etre echoue."
-    }
-
-    Write-Host "Montage de l'image ISO..." -ForegroundColor Gray
     $mount = Mount-DiskImage -ImagePath $isoPath -PassThru
-    
-    # PAUSE CRITIQUE : Laisse 2 secondes à Windows pour assigner la lettre de lecteur
     Start-Sleep -Seconds 2
+    $driveLetter = ($mount | Get-Volume).DriveLetter
     
-    $vol = $mount | Get-Volume
-    if (-not $vol) { throw "Erreur : Windows n'a pas pu assigner de lettre de lecteur a l'ISO." }
+    # Génération du mot de passe
+    $pass = -join ((33..126 | % {[char]$_}) | Get-Random -Count 12)
     
-    $driveLetter = $vol.DriveLetter
-    
-    # Génération du mot de passe complexe
-    $chars = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789!@#$%"
-    $pass = -join (1..12 | % { $chars[(Get-Random -Maximum $chars.Length)] })
-
-    # Variables d'environnement pour l'installeur Abacus
+    # RÉINTÉGRATION DE VOS PARAMÈTRES PERSONNALISÉS
     $env:ABASETUP_ADMINPASSWORD = $pass
     $env:ABASETUP_UNATTENDED = 1
-    $env:ABASETUP_LANGUAGESETUP="fr"
-	$env:ABASETUP_METHODVISERVER=1
-	$env:ABASETUP_TARGETDIR="C:\"
-	$env:ABASETUP_REGISTRATION_LOCATION="C:\abalic\abareg.xml"
+    $env:ABASETUP_LANGUAGESETUP = "fr"
+    $env:ABASETUP_METHODVISERVER = 1
+    $env:ABASETUP_TARGETDIR = "C:\"
+    $env:ABASETUP_REGISTRATION_LOCATION = "C:\abalic\abareg.xml"
     
-    Write-Host "`n" + ("*" * 45) -ForegroundColor Red
+    Write-Host "!!! Veuillez noter le mot de passe d'ABACUS !!!" -ForegroundColor Red
+
+    Write-Host "`n==========================================" -ForegroundColor Red
     Write-Host "  MOT DE PASSE GENERE : $pass" -ForegroundColor Red -BackgroundColor White
-    Write-Host ("*" * 45) + "`n" -ForegroundColor Red
+    Write-Host "==========================================`n" -ForegroundColor Red
 
-    Write-Host "ISO monte sur $driveLetter :\. Pret pour l'installation." -ForegroundColor Green
+    # Vérification de la licence avant de lancer
+    Write-Host "Merci de copier le fichier abareg.xml dans C:\abalic\ avant de continuer." -ForegroundColor Yellow
+    pause
 
-	Write-Host "Merci de copier le fichier abareg.xml dans le dossier C:\abalic\ avant de continuer"
-	pause
-    
     $exePath = "${driveLetter}:\abasetup.exe"
     if (Test-Path $exePath) {
+        Write-Host "Lancement de l'installation..." -ForegroundColor Green
         Start-Process -FilePath $exePath -Wait
     } else {
-        Write-Warning "Fichier abasetup.exe introuvable sur le lecteur $driveLetter :\"
+        Write-Warning "abasetup.exe introuvable sur le lecteur $driveLetter :\"
     }
-    } 
-catch {
-    Write-Error "Erreur lors du montage : $_"
-    } 
-finally {
-    Write-Host "`nUne fois l'installation finie, appuyez sur une touche pour demonter l'ISO."
-    pause
+} finally {
+    # Nettoyage automatique du lecteur virtuel
     Dismount-DiskImage -ImagePath $isoPath -ErrorAction SilentlyContinue
-    Write-Host "Termine."
+    Write-Host "Processus termine."
 }
-
