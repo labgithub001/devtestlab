@@ -230,6 +230,10 @@ $basePath = "C:\abasources"
 $isoPath  = Join-Path $basePath "abacus.iso"
 if (-not (Test-Path $basePath)) { New-Item $basePath -ItemType Directory | Out-Null }
 
+$licPath = "C:\abalic"
+$abaregPath  = Join-Path $licPath "abareg.xml"
+if (-not (Test-Path $licPath)) { New-Item $licPath -ItemType Directory | Out-Null }
+
 if (Test-Path $isoPath) {
     Dismount-DiskImage -ImagePath $isoPath -ErrorAction SilentlyContinue
     Remove-Item $isoPath -Force
@@ -283,3 +287,4 @@ try {
     Dismount-DiskImage -ImagePath $isoPath -ErrorAction SilentlyContinue
     Write-Host "Processus termine."
 }
+
