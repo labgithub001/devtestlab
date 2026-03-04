@@ -292,6 +292,9 @@ try {
     Write-Host ("*" * 45) + "`n" -ForegroundColor Red
 
     Write-Host "ISO monte sur $driveLetter :\. Pret pour l'installation." -ForegroundColor Green
+
+	Write-Host "Merci de copier le fichier abareg.xml dans le dossier C:\abalic\ avant de continuer"
+	pause
     
     $exePath = "${driveLetter}:\abasetup.exe"
     if (Test-Path $exePath) {
@@ -309,3 +312,4 @@ finally {
     Dismount-DiskImage -ImagePath $isoPath -ErrorAction SilentlyContinue
     Write-Host "Termine."
 }
+
