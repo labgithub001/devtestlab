@@ -15,6 +15,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $AbacusRepo = @{
     "2026" = @{
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/551b9f4ef8ac5700f0ad3783b6db6dc3d4f036f8578b1e5fe60ae970273ae5ef/all/v2026.201.17211-complete-15.07.2026.iso"
 		"06.2026" = "https://storage.googleapis.com/images.abasky.net/5028e50adacb68f6deb991a6bd48e11c6f337f980f8e26ab97adeace06feb77f/all/v2026.201.17178-complete-15.06.2026.iso"
 		"05.2026" = "https://storage.googleapis.com/images.abasky.net/25d97a9c83bbef6a505e866f1d14963f159f6daa4ec444a22586beb249cfd9fe/all/v2026.201.17145-complete-15.05.2026.iso"
 		"04.2026" = "https://storage.googleapis.com/images.abasky.net/b3ff9fa8c71000842877a9a5f46d49527a8f855e36646e625202ce4d78ed1582/all/v2026.200.17098-complete-15.04.2026.iso"
@@ -24,6 +25,7 @@ $AbacusRepo = @{
         "12.2025" = "https://storage.googleapis.com/images.abasky.net/aa4c3961d2d5a5439cc6fe94a326b766c449654e35bd846509d0b6bcd2fd9a45/all/v2026.100.16971-complete-15.12.2025.iso"
     }
     "2025" = @{
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/f614ee9d0237fc78a005c6f290ce2a5cd72ffea2b2f86698df8146c404bd1cdd/all/v2025.203.17044-complete-15.07.2026.iso"
 		"06.2026" = "https://storage.googleapis.com/images.abasky.net/e65e59155232ad8003571ec105f4fc387baf6c81e76b30e7636364496b91aea5/all/v2025.203.17014-complete-15.06.2026.iso"
 		"05.2026" = "https://storage.googleapis.com/images.abasky.net/960a0d7c353b754c0a9f7848734c0844db0bb5417071e5e52214eda3aa3b8d3d/all/v2025.203.16987-complete-15.05.2026.iso"
 		"04.2026" = "https://storage.googleapis.com/images.abasky.net/5c3481d15bde4a984fb363a28e94a7352db3fea308ec60bc728db751cec1f29a/all/v2025.203.16959-complete-15.04.2026.iso"
@@ -45,6 +47,7 @@ $AbacusRepo = @{
         "12.2024" = "https://storage.googleapis.com/images.abasky.net/412d496dfa1afcc8ba26e3996ac19cfe448369cf9c3fbf5d48ef219514e8cc13/all/v2025.100.16463-complete-15.12.2024.iso"
     }
     "2024" = @{
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/d42ceed1ddb9e9498838e6e94859941286c6c2ab141a07d84cbcfb780cfbdd29/all/v2024.204.16772-complete-15.07.2026.iso"
 		"06.2026" = "https://storage.googleapis.com/images.abasky.net/241d7b927a2c6817c5210ba1cff7c491956fe8f79005263afb08930ef0dd2aa8/all/v2024.204.16741-complete-15.06.2026.iso"
 		"05.2026" = "https://storage.googleapis.com/images.abasky.net/91803c402665a3e404bd06541b376f1a42fc47cbb94b8129cc212a8d55752ced/all/v2024.204.16712-complete-15.05.2026.iso"
 		"04.2026" = "https://storage.googleapis.com/images.abasky.net/da063affb48ebaca41721094dbe0a368d86b6c3d085e2e8593115acc5cc5c7c3/all/v2024.204.16685-complete-15.04.2026.iso"
