@@ -15,12 +15,26 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $AbacusRepo = @{
     "2026" = @{
+		"10.2026" = "https://storage.googleapis.com/images.abasky.net/98ee52108f801af879ba28051e277d0c7950a1cb203ee4688696756869c231d1/all/v2026.202.17318-complete-15.10.2026.iso"
+		"09.2026" = "https://storage.googleapis.com/images.abasky.net/b5b4e55c8039a9110f2f8f8894ca92da9d32985e09b378842fac45093df109ba/all/v2026.202.17281-complete-15.09.2026.iso"
+		"08.2026" = "https://storage.googleapis.com/images.abasky.net/ca92227031248e51767ce501cb2d973a3e9a4a912ec5c4a57c025265755acdf3/all/v2026.201.17251-complete-15.08.2026.iso"
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/551b9f4ef8ac5700f0ad3783b6db6dc3d4f036f8578b1e5fe60ae970273ae5ef/all/v2026.201.17211-complete-15.07.2026.iso"
+		"06.2026" = "https://storage.googleapis.com/images.abasky.net/5028e50adacb68f6deb991a6bd48e11c6f337f980f8e26ab97adeace06feb77f/all/v2026.201.17178-complete-15.06.2026.iso"
+		"05.2026" = "https://storage.googleapis.com/images.abasky.net/25d97a9c83bbef6a505e866f1d14963f159f6daa4ec444a22586beb249cfd9fe/all/v2026.201.17145-complete-15.05.2026.iso"
+		"04.2026" = "https://storage.googleapis.com/images.abasky.net/b3ff9fa8c71000842877a9a5f46d49527a8f855e36646e625202ce4d78ed1582/all/v2026.200.17098-complete-15.04.2026.iso"
 		"03.2026" = "https://storage.googleapis.com/images.abasky.net/810b015d1e84cb697231556e1325c85b6f17a98d4ac3eda38b63b6a291c1fd6b/all/v2026.200.17069-complete-15.03.2026.iso"
         "02.2026" = "https://storage.googleapis.com/images.abasky.net/1866a5ca2e044f29d3ffb38169ebe61783dda65e6c853ab0ba29588adc0146ee/all/v2026.200.17046-release-15.02.2026.iso"
         "01.2026" = "https://storage.googleapis.com/images.abasky.net/35427bddf2a52ba45c0717f94a5ec8d9ae731ae62bfe7c860cbcd82d8de34b14/all/v2026.100.17000-complete-15.01.2026.iso"
         "12.2025" = "https://storage.googleapis.com/images.abasky.net/aa4c3961d2d5a5439cc6fe94a326b766c449654e35bd846509d0b6bcd2fd9a45/all/v2026.100.16971-complete-15.12.2025.iso"
     }
     "2025" = @{
+		"10.2026" = "https://storage.googleapis.com/images.abasky.net/1ed7afab9cb3d46904bad248470b7b4552962d066648f7fda7d3f68462329c87/all/v2025.203.17157-complete-15.10.2026.iso"
+		"09.2026" = "https://storage.googleapis.com/images.abasky.net/9f0ad2ad76a65004585849ca1416360a2b7531753a98aefc8286db20206907e4/all/v2025.203.17122-complete-15.09.2026.iso"
+		"08.2026" = "https://storage.googleapis.com/images.abasky.net/ec231320d5bacaea806331d0edf4021d71d79d434d2e513ca95d4c3fbaf8f4d2/all/v2025.203.17085-complete-15.08.2026.iso"
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/f614ee9d0237fc78a005c6f290ce2a5cd72ffea2b2f86698df8146c404bd1cdd/all/v2025.203.17044-complete-15.07.2026.iso"
+		"06.2026" = "https://storage.googleapis.com/images.abasky.net/e65e59155232ad8003571ec105f4fc387baf6c81e76b30e7636364496b91aea5/all/v2025.203.17014-complete-15.06.2026.iso"
+		"05.2026" = "https://storage.googleapis.com/images.abasky.net/960a0d7c353b754c0a9f7848734c0844db0bb5417071e5e52214eda3aa3b8d3d/all/v2025.203.16987-complete-15.05.2026.iso"
+		"04.2026" = "https://storage.googleapis.com/images.abasky.net/5c3481d15bde4a984fb363a28e94a7352db3fea308ec60bc728db751cec1f29a/all/v2025.203.16959-complete-15.04.2026.iso"
 		"03.2026" = "https://storage.googleapis.com/images.abasky.net/480b06acc7335919860402d82fbdb11ae03631612a26247703e5fc652166b28e/all/v2025.203.16930-complete-15.03.2026.iso"
         "02.2026" = "https://storage.googleapis.com/images.abasky.net/ceeca4c66215784d836d5271deffcb73672441e76419933f5074d9e9c771b36a/all/v2025.203.16907-complete-18.02.2026.iso"
         "01.2026" = "https://storage.googleapis.com/images.abasky.net/4ceaf93d4b2002a151bb2d9a2129571011fc57f455c75abb99a8ab568b130b9a/all/v2025.203.16877-complete-15.01.2026.iso"
@@ -39,6 +53,13 @@ $AbacusRepo = @{
         "12.2024" = "https://storage.googleapis.com/images.abasky.net/412d496dfa1afcc8ba26e3996ac19cfe448369cf9c3fbf5d48ef219514e8cc13/all/v2025.100.16463-complete-15.12.2024.iso"
     }
     "2024" = @{
+		"10.2026" = "https://storage.googleapis.com/images.abasky.net/f631e87340bc465e7bed0d0fb70ed7b875ab809de0a96d2c282db5e4cc4efe1e/all/v2024.205.16885-complete-15.10.2026.iso"
+		"09.2026" = "https://storage.googleapis.com/images.abasky.net/4673a1094a8be932ca5d17f06383284fb03545f00f86de958c30d396cd410157/all/v2024.205.16852-complete-15.09.2026.iso"
+		"08.2026" = "https://storage.googleapis.com/images.abasky.net/efab9e9ed96a10770967f6b11c5e6ce4cdcadd6f369ea844c254c95cc1c7b394/all/v2024.205.16818-complete-15.08.2026.iso"
+		"07.2026" = "https://storage.googleapis.com/images.abasky.net/d42ceed1ddb9e9498838e6e94859941286c6c2ab141a07d84cbcfb780cfbdd29/all/v2024.204.16772-complete-15.07.2026.iso"
+		"06.2026" = "https://storage.googleapis.com/images.abasky.net/241d7b927a2c6817c5210ba1cff7c491956fe8f79005263afb08930ef0dd2aa8/all/v2024.204.16741-complete-15.06.2026.iso"
+		"05.2026" = "https://storage.googleapis.com/images.abasky.net/91803c402665a3e404bd06541b376f1a42fc47cbb94b8129cc212a8d55752ced/all/v2024.204.16712-complete-15.05.2026.iso"
+		"04.2026" = "https://storage.googleapis.com/images.abasky.net/da063affb48ebaca41721094dbe0a368d86b6c3d085e2e8593115acc5cc5c7c3/all/v2024.204.16685-complete-15.04.2026.iso"
 		"03.2026" = "https://storage.googleapis.com/images.abasky.net/3ca633ef3cce52630fafe6cdce4285a8c4f9472aa6f9a784ae724ac90a166caa/all/v2024.204.16656-complete-15.03.2026.iso"
         "02.2026" = "https://storage.googleapis.com/images.abasky.net/904302d86aa40a658c4e911bc620ae27a12b40c9e502c84a0e9174fde5260348/all/v2024.204.16629-complete-15.02.2026.iso"
         "01.2026" = "https://storage.googleapis.com/images.abasky.net/b081282cc2bab35491772c4eb537e682c964d25bb928e1165a79da95fcabc9ec/all/v2024.204.16598-complete-15.01.2026.iso"
