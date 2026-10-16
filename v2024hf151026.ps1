@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Installation automatisée des mises à jour Abacus - Version Finale Optimisée
+    Installation automatisée de la mise à jour Abacus v2024 15.10.2026 - Version Finale Optimisée
 #>
 
 # 1. Privilèges Administrateur
