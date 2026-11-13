@@ -63,6 +63,7 @@ Write-Output "========================================"
     Write-Output "========================================"
     Write-Output "Version             : $versionAbacus"
     Write-Output "========================================"
+}
 # --- CONFIGURATION DES VERSIONS ---
 # Vous pouvez ajouter autant de versions que vous voulez ici. 
 # Veillez juste à ce que chaque "MM.AAAA" soit unique au sein d'une même année majeure.
