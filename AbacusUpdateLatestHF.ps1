@@ -56,8 +56,8 @@ Write-Output "========================================"
 
 # --- CONFIGURATION DES VERSIONS ---
 $AbacusRepo = @{
-    "2026" = "https://storage.googleapis.com/images.abasky.net/98ee52108f801af879ba28051e277d0c7950a1cb203ee4688696756869c231d1/all/v2026.202.17318-hotfix-15.10.2026.iso"
-    "2025" = "https://storage.googleapis.com/images.abasky.net/1ed7afab9cb3d46904bad248470b7b4552962d066648f7fda7d3f68462329c87/all/v2025.203.17157-hotfix-15.10.2026.iso"
+    "2026" = "https://storage.googleapis.com/images.abasky.net/56f132c6302d25044f867b6cccac415675b4a883e1a6d3852051036e2da6deea/all/v2026.202.17352-hotfix-15.11.2026.iso"
+    "2025" = "https://storage.googleapis.com/images.abasky.net/c15f9689a13032415818850b07e44015eae5770f46855b9fb57f3e96108cb6fc/all/v2025.203.17189-hotfix-15.11.2026.iso"
     "2024" = "https://storage.googleapis.com/images.abasky.net/f631e87340bc465e7bed0d0fb70ed7b875ab809de0a96d2c282db5e4cc4efe1e/all/v2024.205.16885-hotfix-15.10.2026.iso"
 }
 
