@@ -15,6 +15,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $AbacusRepo = @{
     "2026" = @{
+		"11.2026" = "https://storage.googleapis.com/images.abasky.net/56f132c6302d25044f867b6cccac415675b4a883e1a6d3852051036e2da6deea/all/v2026.202.17352-complete-15.11.2026.iso"
 		"10.2026" = "https://storage.googleapis.com/images.abasky.net/98ee52108f801af879ba28051e277d0c7950a1cb203ee4688696756869c231d1/all/v2026.202.17318-complete-15.10.2026.iso"
 		"09.2026" = "https://storage.googleapis.com/images.abasky.net/b5b4e55c8039a9110f2f8f8894ca92da9d32985e09b378842fac45093df109ba/all/v2026.202.17281-complete-15.09.2026.iso"
 		"08.2026" = "https://storage.googleapis.com/images.abasky.net/ca92227031248e51767ce501cb2d973a3e9a4a912ec5c4a57c025265755acdf3/all/v2026.201.17251-complete-15.08.2026.iso"
