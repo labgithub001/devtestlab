@@ -15,6 +15,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $AbacusRepo = @{
     "2026" = @{
+		"11.2026" = "https://storage.googleapis.com/images.abasky.net/56f132c6302d25044f867b6cccac415675b4a883e1a6d3852051036e2da6deea/all/v2026.202.17352-complete-15.11.2026.iso"
 		"10.2026" = "https://storage.googleapis.com/images.abasky.net/98ee52108f801af879ba28051e277d0c7950a1cb203ee4688696756869c231d1/all/v2026.202.17318-complete-15.10.2026.iso"
 		"09.2026" = "https://storage.googleapis.com/images.abasky.net/b5b4e55c8039a9110f2f8f8894ca92da9d32985e09b378842fac45093df109ba/all/v2026.202.17281-complete-15.09.2026.iso"
 		"08.2026" = "https://storage.googleapis.com/images.abasky.net/ca92227031248e51767ce501cb2d973a3e9a4a912ec5c4a57c025265755acdf3/all/v2026.201.17251-complete-15.08.2026.iso"
@@ -28,6 +29,7 @@ $AbacusRepo = @{
         "12.2025" = "https://storage.googleapis.com/images.abasky.net/aa4c3961d2d5a5439cc6fe94a326b766c449654e35bd846509d0b6bcd2fd9a45/all/v2026.100.16971-complete-15.12.2025.iso"
     }
     "2025" = @{
+		"11.2026" = "https://storage.googleapis.com/images.abasky.net/c15f9689a13032415818850b07e44015eae5770f46855b9fb57f3e96108cb6fc/all/v2025.203.17189-complete-15.11.2026.iso"
 		"10.2026" = "https://storage.googleapis.com/images.abasky.net/1ed7afab9cb3d46904bad248470b7b4552962d066648f7fda7d3f68462329c87/all/v2025.203.17157-complete-15.10.2026.iso"
 		"09.2026" = "https://storage.googleapis.com/images.abasky.net/9f0ad2ad76a65004585849ca1416360a2b7531753a98aefc8286db20206907e4/all/v2025.203.17122-complete-15.09.2026.iso"
 		"08.2026" = "https://storage.googleapis.com/images.abasky.net/ec231320d5bacaea806331d0edf4021d71d79d434d2e513ca95d4c3fbaf8f4d2/all/v2025.203.17085-complete-15.08.2026.iso"
